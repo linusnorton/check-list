@@ -30,7 +30,7 @@ ListSchema = new Schema
             default: Date.now
 
     # List modules, contain the Module state
-    modules: [ListModule]
+    modules: {}
 
 , {strict: true}
 

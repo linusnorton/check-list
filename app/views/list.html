@@ -25,8 +25,8 @@
     </div>
     
     <label for="project-name">Project or task name</label>
-    <input id="project-name" name="project-name" type="text" placeholder="Project or task name" />
-    <input name="list-id" type="hidden" value="1" />        
+    <input id="project-name" name="project-name" type="text" placeholder="Project or task name" value="{{list.name}}"/>
+    <input name="list-id" type="hidden" value="{{list._id}}" />
 </div>
 
 <div class="module-title module">

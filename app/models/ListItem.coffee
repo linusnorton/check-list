@@ -13,7 +13,7 @@ ListItemSchema = new Schema
 	status:
 		type: Boolean
 		required: true
-		defualt: true
+		default: true
 
 , {strict: true}
 
