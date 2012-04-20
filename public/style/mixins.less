@@ -1,0 +1,5 @@
+.type-size (@pixel-size) when (ispixel(@pixel-size)) {
+    @rem-size: ~`(parseInt("@{pixel-size}") / 10) + 'rem'`;
+    font-size: @pixel-size;
+    font-size: @rem-size;
+}
