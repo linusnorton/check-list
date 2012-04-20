@@ -1,31 +1,36 @@
 
     <a class="menu signout" title="Sign me out" href="/auth/signout">Sign me out</a>
     <h1>Your checklists</h1>
-
-     <div class="github-details">
-        <h3>Your github details</h3>
-        <img class="thumbnail" alt="gravatar" src="{{user.avatar_url}}"/>
-        {{#name}}
-        <p class="username">{{user.name}}</p>
-        {{/name}}
-        {{^name}}
-        <p class="username">{{user.login}}</p>
-        {{/name}}
-        
-        <table>
-            <tr>
-                <td>Followers</td>
-                <td>Following</td>
-                <td>Repos</td>
-                <td class="no-border">Gists</td>
-            </tr>
-            <tr>
-                <td>{{user.followers}}</td>
-                <td>{{user.following}}</td>
-                <td>{{user.public_repos}}</td>
-                <td class="no-border">{{user.public_gists}}</td>
-            </tr>
-        </table>
+    <div class="clearfix">        
+         <div class="github-details">
+            <h3>Your github details</h3>
+            <img class="thumbnail" alt="gravatar" src="{{user.avatar_url}}"/>
+            {{#user.name}}
+            <p class="username">{{user.name}}</p>
+            {{/user.name}}
+            {{^user.name}}
+            <p class="username">{{user.login}}</p>
+            {{/user.name}}
+            {{#user.company}}
+            <p class="company">{{user.company}}</p>
+            {{/user.company}}
+            <table>
+                <tr>
+                    <td>Followers</td>
+                    <td>Following</td>
+                    <td>Repos</td>
+                    <td class="no-border">Gists</td>
+                </tr>
+                <tr>
+                    <td>{{user.followers}}</td>
+                    <td>{{user.following}}</td>
+                    <td>{{user.public_repos}}</td>
+                    <td class="no-border">{{user.public_gists}}</td>
+                </tr>
+            </table>
+        </div>
+        <p class="intro">These are the details of the checklists you have saved.</p>
+        <p class="intro">Add a new checklist or click on one in the list to open it.</p>
     </div>
 <div class="logged-in">
     <ul class="saved-lists">
