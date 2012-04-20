@@ -13,6 +13,8 @@
       checker: ".checkbox",
       activeClass: "active",
       checkedClass: "checked",
+      disableSelector: ".item-state",
+      disabledClass: "not-applicable",
       ws: ws
     });
   });
@@ -89,9 +91,36 @@
 
     List.prototype.bindItems = function(item) {
       var _this = this;
-      return $(item).find(this.settings.checker).bind('click', function(event) {
+      $(item).find(this.settings.checker).bind('click', function(event) {
         return _this.itemClicked(event, $(item).data('item-id'));
       });
+      return this.bindNa($(item).find(this.settings.disableSelector));
+    };
+
+    List.prototype.bindNa = function(selector) {
+      var _this = this;
+      return $(selector).bind('click', function(event) {
+        return _this.naClicked(event);
+      });
+    };
+
+    List.prototype.naClicked = function(event) {
+      var checker, currClass, element, itemId;
+      element = $(event.target);
+      currClass = element.closest('li').attr('class');
+      checker = element.parent().find(this.settings.checker);
+      itemId = element.closest('li').data('item-id');
+      if (currClass === this.settings.disabledClass) {
+        element.closest('li').removeClass(this.settings.disabledClass);
+        checker.removeClass('na');
+        checker.data('state', false);
+      } else {
+        element.closest('li').addClass(this.settings.disabledClass);
+        checker.removeClass(this.settings.checkedClass);
+        checker.addClass('na');
+        checker.data('state', 'na');
+      }
+      return this.settings.ws.updateItem(this.listId, itemId, checker.data('state'));
     };
 
     List.prototype.moduleClicked = function(event) {

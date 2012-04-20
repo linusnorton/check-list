@@ -15,6 +15,30 @@ class List
 		.bind 'click', (event) =>
 			@itemClicked event, $(item).data('item-id')
 
+		@bindNa $(item).find(@settings.disableSelector)
+
+	bindNa: (selector) ->
+		$(selector).bind 'click', (event) =>
+			@naClicked event
+
+	naClicked: (event) ->
+		element = $(event.target)
+		currClass = element.closest('li').attr('class')
+		checker = element.parent().find(@settings.checker)
+		itemId =  element.closest('li').data('item-id')
+
+		if currClass is @settings.disabledClass
+			element.closest('li').removeClass(@settings.disabledClass)
+			checker.removeClass('na')
+			checker.data('state', false)
+		else
+			element.closest('li').addClass(@settings.disabledClass)
+			checker.removeClass(@settings.checkedClass)
+			checker.addClass('na')
+			checker.data('state', 'na')
+
+		@settings.ws.updateItem(@listId, itemId, checker.data('state'))
+
 	moduleClicked: (event) ->
 		console.log $(event.target).data('state')
 		switcher = $(event.target)

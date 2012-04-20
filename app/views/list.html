@@ -4,6 +4,26 @@
 <h1>Checklist</h1>
 
 <div class="project-details">
+    <div class="github-details">
+        <img class="thumbnail" alt="gravatar" src="{{user.avatar_url}}"/>
+        {{#name}}
+            Name: {{user.name}}
+        {{/name}}
+        {{^name}}
+            Login: {{user.login}}
+        {{/name}}
+        <table>
+            <tr>
+                <td>Followers</td>
+                <td>Following</td>
+            </tr>
+            <tr>
+                <td>{{user.followers}}</td>
+                <td>{{user.following}}</td>
+            </tr>
+        </table>
+    </div>
+    
     <label for="project-name">Project or task name</label>
     <input id="project-name" name="project-name" type="text" placeholder="Project or task name" value="{{list.name}}"/>
     <input name="list-id" type="hidden" value="{{list._id}}" />
