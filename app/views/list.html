@@ -14,9 +14,9 @@
     <span class="module-state switcher" data-state="off" data-module-id="1">OFF</span>
 </div>
 <ul class="list-options">
-    <li class="not-applicable">
+    <li class="not-applicable" data-item-id="1">
         <h4>Does the CSS validates?</h4>
-        <span class="checkbox na">N/A</span>
+        <span class="checkbox na" data-state="na">N/A</span>
         <div class="extra-info">Extra info http://www.validatethis.com</div>
         <div class="item-state disabled">N/A</div>
     </li>
@@ -27,14 +27,14 @@
     <span class="module-state switcher on" data-state="on" data-module-id="2">ON</span>
 </div>
 <ul class="list-options active">
-    <li>
+    <li data-item-id="2">
         <h4>Does the feature work without teh javascripts</h4>
-        <span class="checkbox">Not checked</span>
+        <span class="checkbox" data-state="false">Not checked</span>
         <div class="item-state disabled">N/A</div>
     </li>
-    <li>
+    <li data-item-id="3">
         <h4>Has you done teh lintings</h4>
-        <span class="checkbox checked">Checked</span>
+        <span class="checkbox checked" data-state="true">Checked</span>
         <div class="extra-info">Extra info http://www.validatethis.com</div>
         <div class="item-state disabled">N/A</div>
     </li>
@@ -42,14 +42,14 @@
 
 <div class="module-title module"><h3>JS</h3><span class="module-state switcher on" data-state="on" data-module-id="3">ON</span></div>
 <ul class="list-options active">
-    <li>
+    <li data-item-id="4">
         <h4>Does the feature work without teh javascripts</h4>
-        <span class="checkbox checked">Checked</span>
+        <span class="checkbox checked" data-state="true">Checked</span>
         <div class="item-state disabled">N/A</div>
     </li>
-    <li>
+    <li data-item-id="5">
         <h4>Has you done teh lintings</h4>
-        <span class="checkbox">Not checked</span>
+        <span class="checkbox" data-state="false">Not checked</span>
         <div class="item-state disabled">N/A</div>
     </li>
 </ul>

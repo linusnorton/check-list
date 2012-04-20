@@ -1,12 +1,19 @@
-class Accordion
+class List
 	constructor: (@settings) ->
-		@bindModules module for module in $(@settings.elements)
+		@bindModule module for module in $(@settings.elements)
 		@listId = $(@settings.listIdentifier).val()
 
-	bindModules: (module) ->
+	bindModule: (module) ->
 		$(module).find(@settings.switcher)
 		.bind 'click', (event) =>
-			@moduleClicked event		
+			@moduleClicked event
+
+		@bindItems item for item in $(module).next(@settings.listContainer).find('li')
+
+	bindItems: (item) ->
+		$(item).find(@settings.checker)
+		.bind 'click', (event) =>
+			@itemClicked event, $(item).data('item-id')
 
 	moduleClicked: (event) ->
 		console.log $(event.target).data('state')
@@ -32,3 +39,19 @@ class Accordion
 		switcher.removeClass('off')
 		switcher.addClass('on')
 		switcher.html('ON')
+
+	itemClicked: (event, itemId) ->
+		checker = $(event.target)
+		state = checker.data('state')
+		console.log itemId
+
+		if state is true
+			console.log 'checked'
+			@uncheckItem 
+		else if state is false
+			console.log 'unchecked'
+			@checkItem
+		else
+			console.log 'na'
+			@uncheckItem
+
