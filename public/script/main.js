@@ -136,19 +136,25 @@
     };
 
     List.prototype.hideModule = function(switcher) {
-      switcher.parent().next(this.settings.listContainer).removeClass(this.settings.activeClass);
-      switcher.data('state', 'off');
-      switcher.removeClass('on');
-      switcher.addClass('off');
-      return switcher.html('OFF');
+      var _this = this;
+      return switcher.parent().next(this.settings.listContainer).slideUp(function() {
+        switcher.parent().next(_this.settings.listContainer).removeClass(_this.settings.activeClass);
+        switcher.data('state', 'off');
+        switcher.removeClass('on');
+        switcher.addClass('off');
+        return switcher.html('OFF');
+      });
     };
 
     List.prototype.showModule = function(switcher) {
-      switcher.parent().next(this.settings.listContainer).addClass(this.settings.activeClass);
-      switcher.data('state', 'on');
-      switcher.removeClass('off');
-      switcher.addClass('on');
-      return switcher.html('ON');
+      var _this = this;
+      return switcher.parent().next(this.settings.listContainer).slideDown(function() {
+        switcher.parent().next(_this.settings.listContainer).addClass(_this.settings.activeClass);
+        switcher.data('state', 'on');
+        switcher.removeClass('off');
+        switcher.addClass('on');
+        return switcher.html('ON');
+      });
     };
 
     List.prototype.itemClicked = function(event, itemId) {
