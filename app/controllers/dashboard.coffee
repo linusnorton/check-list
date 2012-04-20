@@ -8,14 +8,14 @@ module.exports = (request, response) ->
     if request.session.user
 
         # Get lists
-        List.find {user: request.session.user.id}, (error, docs) ->
+        List.find {user: request.session.user.id}, (error, lists) ->
             throw error if error
 
             # Render view
             response.render 'dashboard',
                 title: 'Welcome!'
                 user: request.session.user
-                lists: docs
+                lists: lists
 
     # No user
     else
