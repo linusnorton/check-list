@@ -6,13 +6,10 @@ module.exports = ->
     authMiddleware = require('./middleware/auth')
     requireAuthMiddleware = require('./middleware/requireAuth')
 
-    # 'Static page' routes
-
-    @get '/', authMiddleware, require('./controllers/static').home
-
-    #@get '/list', authMiddleware, require('./controllers/list').index
-    @get '/list', authMiddleware, requireAuthMiddleware, require('./controllers/static').examplelist
-    @get '/list/put', authMiddleware, requireAuthMiddleware, require('./controllers/list').put
+    # Dashboard routes
+    @get '/', authMiddleware, require('./controllers/dashboard')
+    @get '/list', authMiddleware, requireAuthMiddleware, require('./controllers/list')
+    @get '/list/:id', authMiddleware, requireAuthMiddleware, require('./controllers/list')
 
     # Auth routes
     @all '/auth', require('./controllers/auth')

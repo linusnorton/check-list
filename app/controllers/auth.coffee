@@ -8,7 +8,7 @@ github = require '../library/githubApi'
 # Auth controller
 module.exports = (request, response) ->
 
-    # Set up oAuth stuff
+    # Set up oAuth stuff - this should be somewhere else, but fuck it.
     clientId = '893f5eb02e917685d16e'
     secret = '372de72dfa51c82a1f5cabfbc1afd09bc612ddf8'
     oauth = new OAuth2 clientId, secret, 'https://github.com/', 'login/oauth/authorize', 'login/oauth/access_token'
