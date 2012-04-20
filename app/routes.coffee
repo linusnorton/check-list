@@ -7,7 +7,8 @@ module.exports = ->
 
     # 'Static page' routes
     @get '/', authMiddleware, require('./controllers/static').home
-    @get '/list', authMiddleware, require('./controllers/static').list
+    @get '/list', authMiddleware, require('./controllers/list').index
+    @get '/list/put', authMiddleware, require('./controllers/list').put
 
     # Auth routes
     @all '/auth', require('./controllers/auth')

@@ -2,6 +2,7 @@
 # Dependencies
 express = require 'express'
 hulk = require 'hulk-hogan'
+mongoose = require 'mongoose'
 
 # Application default configuration
 #
@@ -38,3 +39,6 @@ module.exports = ->
     
     # Mount application routes
     @use @router
+
+    # Connect to Mongo via Mongoose
+    mongoose.connect 'mongodb://localhost/checklist'

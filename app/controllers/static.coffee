@@ -9,9 +9,3 @@ module.exports =
         response.render 'home',
             title: 'Welcome!'
             user: request.session.user
-
-    # List page
-    list: (request, response) ->
-        response.render 'list',
-            title: 'List'
-            user: request.session.user
