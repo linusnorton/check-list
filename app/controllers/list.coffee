@@ -1,5 +1,6 @@
 
 List = require "../models/List"
+Module = require "../models/Module"
 
 # List controller
 module.exports = (request, response) ->
@@ -27,12 +28,18 @@ module.exports = (request, response) ->
             if error || !list
                 response.redirect '/'
 
-            # Render view
+            # We have a list!
             else
-                # Render view
-                response.render 'list',
-                    title: list.name
-                    user: request.session.user
-                    list: list
+                
+                # Get Modules (nested callbacks FTW!)
+                Module.find {}, (error, modules) ->
+                    throw error if error
+                    
+                    # Render view
+                    response.render 'list',
+                        title: list.name
+                        user: request.session.user
+                        list: list
+                        modules: modules
 
         
