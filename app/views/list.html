@@ -1,22 +1,54 @@
-<a href="/">Take me home</a>
+<a class="home" title="Take me home" href="/">Take me home</a>
 
-<h1>CHECKLIST</h1>
+<h1>Checklist</h1>
 
+<div class="project-details">
+    <label for="project-name">Project or task name</label>
+    <input id="project-name" name="project-name" type="text" placeholder="Project or task name" />
+    <input name="list-id" type="hidden" value="1" />
+</div>
 
-<label for="project-name">Project or task name</label>
-<input id="project-name" name="project-name" type="text" placeholder="Project or task name" />
-
-<h3 class="module-title">CSS<span class="module-state">OFF</span></h3>
+<div class="module-title module">
+    <h3>CSS</h3>
+    <span class="module-state switcher" data-state="off" data-module-id="1">OFF</span>
+</div>
 <ul class="list-options">
-    <li>Does the CSS validates?<span class="checkbox">Not checked</span><div>Extra info http://www.validatethis.com</div><div class="item-state disabled">N/A</div></li>
+    <li class="not-applicable">
+        <h4>Does the CSS validates?</h4>
+        <span class="checkbox na">N/A</span>
+        <div class="extra-info">Extra info http://www.validatethis.com</div>
+        <div class="item-state disabled">N/A</div>
+    </li>
 </ul>
-<h3 class="module-title">PHP<span class="module-state on">ON</span></h3>
+
+<div class="module-title module">
+    <h3>PHP</h3>
+    <span class="module-state switcher on" data-state="on" data-module-id="2">ON</span>
+</div>
 <ul class="list-options">
-    <li>Does the feature work without teh javascripts<span class="checkbox">Not checked</span><div class="item-state disabled">N/A</div></li>
-    <li>Has you done teh lintings<span class="checkbox checked">Checked</span><div>Extra info http://www.validatethis.com</div><div class="item-state disabled">N/A</div></li>
+    <li>
+        <h4>Does the feature work without teh javascripts</h4>
+        <span class="checkbox">Not checked</span>
+        <div class="item-state disabled">N/A</div>
+    </li>
+    <li>
+        <h4>Has you done teh lintings</h4>
+        <span class="checkbox checked">Checked</span>
+        <div class="extra-info">Extra info http://www.validatethis.com</div>
+        <div class="item-state disabled">N/A</div>
+    </li>
 </ul>
-<h3 class="momodule-titledule">JS<span class="module-state on">ON</span></h3>
+
+<div class="module-title module"><h3>JS</h3><span class="module-state switcher on" data-state="on" data-module-id="3">ON</span></div>
 <ul class="list-options">
-    <li>Does the feature work without teh javascripts<span class="checkbox checked">Checked</span><div class="item-state disabled">N/A</div></li>
-    <li>Has you done teh lintings<span class="checkbox">Not checked</span><div class="item-state disabled">N/A</div></li>
+    <li>
+        <h4>Does the feature work without teh javascripts</h4>
+        <span class="checkbox checked">Checked</span>
+        <div class="item-state disabled">N/A</div>
+    </li>
+    <li>
+        <h4>Has you done teh lintings</h4>
+        <span class="checkbox">Not checked</span>
+        <div class="item-state disabled">N/A</div>
+    </li>
 </ul>

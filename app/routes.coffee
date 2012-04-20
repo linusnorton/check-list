@@ -2,8 +2,21 @@
 # Routes
 module.exports = ->
 
+    # Load middleware
+    authMiddleware = require('./middleware/auth')
+
     # 'Static page' routes
-    @get '/', require('./controllers/static').home
+
+    @get '/', authMiddleware, require('./controllers/static').home
+
+    #@get '/list', authMiddleware, require('./controllers/list').index
+    @get '/list', authMiddleware, require('./controllers/static').examplelist
+    @get '/list/put', authMiddleware, require('./controllers/list').put
+
+    # Auth routes
+    @all '/auth', require('./controllers/auth')
+    @all '/auth/:step', require('./controllers/auth')
+
+    # Fucking awesome test data, bitch
     @get '/test/data', require('./controllers/test').data
-#    @get '/list', require('./controllers/list').index
-#    @get '/list/put', require('./controllers/list').put
+

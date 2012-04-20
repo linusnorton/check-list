@@ -1,0 +1,19 @@
+.type-size (@pixel-size) when (ispixel(@pixel-size)) {
+    @rem-size: ~`(parseInt("@{pixel-size}") / 10) + 'rem'`;
+    font-size: @pixel-size;
+    font-size: @rem-size;
+}
+
+.button-base-style () {
+    .type-size(13px);
+    color: @color-type-white;
+    .inline-block;
+    padding: 3px 15px;
+    margin: 0 0 (@type-line-height-body / 2) 0;
+    .text-shadow(-0.5px, -1px, 0, rgba(0, 0, 0, 0.3));
+    .transition(all, .3s);
+    .inset-shadow(0, 0, 1px, 0, rgba(255, 255, 255, 0.7));
+    .rounded-corners(3px);
+    border-width: 1px;
+    border-style: solid;
+}

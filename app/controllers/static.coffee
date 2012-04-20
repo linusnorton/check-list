@@ -8,5 +8,10 @@ module.exports =
     home: (request, response) ->
         response.render 'home',
             title: 'Welcome!'
-            thing: 'World'
+            user: request.session.user
 
+    # Serves the application home page
+    examplelist: (request, response) ->
+        response.render 'list',
+            title: 'Welcome!'
+            user: request.session.user
