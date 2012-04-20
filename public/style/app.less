@@ -88,12 +88,17 @@ a.signout {
         margin:0 5px;
         border-bottom:solid 1px #ebe6e0;
         position:relative;
-        padding:10px;
+        padding:15px;
         list-style-type:none;
+
+        &:hover .item-state {
+            display:block;
+        }
         
         h4 {
             .inline-block;
             width:90%;
+            margin-bottom:4px;
         }
         &.not-applicable {
              h4, .extra-info {
@@ -104,26 +109,44 @@ a.signout {
 
         .item-state {
             position:absolute;
-            left:-30px;
+            left:-34px;
             top:0;
             width:34px;
-            height:27px;
+            height:25px;
             background-color:#d8d8d8;
             text-align:center;
-            padding-top:7px;
+            padding-top:9px;
             color:#000;
             cursor:pointer;
+            display:none;
+
         }
         .checkbox {
             position:absolute;
             right:5px;
-            top:5px;
-            padding:5px;
-            background-color:#e2e2e2;
+            top:8px;
             color:#4e4e4e;
             cursor:pointer;
             text-align:center;
             font-weight:bold;
+            text-indent:-9999px;
+            width:30px;
+            height:30px;
+            background:transparent url(/image/checkbox-sprite.png) no-repeat 0 0;
+
+            &.checked {
+                background:transparent url(/image/checkbox-sprite.png) no-repeat 0 -30px;
+            }
+
+            &.na {
+                background:transparent url(/image/checkbox-sprite.png) no-repeat 0 -60px;
+            }
+            
+        }
+
+        .extra-info {
+            .type-size(12px);
+            color:#8b7f70;
         }
     }
 }
@@ -165,15 +188,14 @@ a.login {
     padding: 10px 70px 10px 15px;
     .inline-block;
     position:relative;    
-    
-    .icon {
-        width:30px;
-        height:30px;
-        text-indent: -9999px;
-        display:block;
-        position:absolute;
-        right:10px;
-        top:8px;
-        background:transparent url(/image/octocat.png) no-repeat left top;
-    }
-} 
+}
+a.login .icon {
+    width:30px;
+    height:30px;
+    text-indent: -9999px;
+    display:block;
+    position:absolute;
+    right:10px;
+    top:8px;
+    background:transparent url(/image/octocat.png) no-repeat left top;
+}
