@@ -7,6 +7,7 @@ module.exports = ->
     requireAuthMiddleware = require('./middleware/requireAuth')
 
     # 'Static page' routes
+
     @get '/', authMiddleware, require('./controllers/static').home
 
     #@get '/list', authMiddleware, require('./controllers/list').index
@@ -16,3 +17,7 @@ module.exports = ->
     # Auth routes
     @all '/auth', require('./controllers/auth')
     @all '/auth/:step', require('./controllers/auth')
+
+    # Fucking awesome test data, bitch
+    @get '/test/data', require('./controllers/test').data
+
