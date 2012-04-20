@@ -1,24 +1,80 @@
 
 html, body {
     margin: 0;
+    height:100%;
 }
 html {
     font-size: 62.5%;
 }
 body {
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-size:14px;
+    background-color:#f4f4f4;
+    color:#474747;
+}
+h1, .h1 {
+    .type-size(40px);
+    font-family:ChunkFiveRoman;
+    color:#484848;
+    margin-bottom:40px;
+    border-bottom:dashed 1px #d3d2d1;
+    font-weight:normal;
+}
+a {
+    color:#2babbe;
+}
+.button {
+    
+}
+a:hover {
+    color:#dfa01a;
+}
+a.home {
+    background:url(/image/home.png) no-repeat left top;
+    width:32px;
+    height:32px;
+    display:block;
+    float:right;
+    text-indent: -9999px;
+    margin-top:5px;
 }
 .main {
     max-width:1080px;
     margin:0 auto;
 }
-.list-options {
+
+.project-details {
+    margin-bottom:50px;
+    padding-bottom:30px;
+    border-bottom:dashed 1px #d3d2d1;
+
+    label {
+        display:block;
+        .type-size(28px);
+        margin-bottom:10px;
+    }
+    input {
+        .type-size(16px);
+        border:none;
+        padding:5px;
+        width:50%;
+        color:#2babbe;
+        border:solid 2px #ffffff;
+        
+        &:focus, &:active {
+            border:solid 2px #2babbe;
+        }
+    }
+}
+.list-options, .saved-lists {
     margin-bottom:20px;
+    background-color:#ded9d3;
+    .shadow(1,1,2px,1,rgba(0, 0, 0, 1));
 
     li {
-        background-color:#ded9d3;
+        margin:0 5px;
+        border-bottom:solid 1px #ebe6e0;
         position:relative;
         padding:10px;
         list-style-type:none;
@@ -27,9 +83,11 @@ body {
             .inline-block;
             width:90%;
         }
-        &.not-applicable h4 {
-            text-decoration:line-through;
-            color:#c3bdb7;
+        &.not-applicable {
+             h4, .extra-info {
+                text-decoration:line-through;
+                color:#c3bdb7;
+            }
         }
 
         .item-state {
@@ -42,9 +100,12 @@ body {
             text-align:center;
             padding-top:7px;
             color:#000;
+            cursor:pointer;
         }
         .checkbox {
-            float:right;
+            position:absolute;
+            right:5px;
+            top:5px;
             padding:5px;
             background-color:#e2e2e2;
             color:#4e4e4e;
@@ -55,6 +116,7 @@ body {
     }
 }
 .module-title {
+    .rounded-corners.top(5px);
     background-color:#a09281;
     color:#fff;
     padding:10px;
@@ -64,17 +126,19 @@ body {
         width:90%;
         float:left;
         .type-size(19px);
+        margin-top:4px;
     }
 
     .module-state {
         float:right;
-        padding:5px;
+        padding:5px 3px 2px;
         background-color:#e2e2e2;
         color:#4e4e4e;
         cursor:pointer;
         width:40px;
         text-align:center;
         font-weight:bold;
+        .rounded-corners(10px);
 
         &.on {
             background-color:#fff;
