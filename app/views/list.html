@@ -13,7 +13,9 @@
         {{^name}}
         <p class="username">{{user.login}}</p>
         {{/name}}
-        
+        {{#user.company}}
+            <p class="company">{{user.company}}</p>
+        {{/user.company}}
         <table>
             <tr>
                 <td>Followers</td>
