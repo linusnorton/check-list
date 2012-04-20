@@ -9,5 +9,7 @@ $ ->
 		checker: ".checkbox"
 		activeClass: "active"
 		checkedClass: "checked"
+		disableSelector: ".item-state"
+		disabledClass: "not-applicable"
 		ws: ws
 	}
