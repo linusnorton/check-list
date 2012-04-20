@@ -5,8 +5,17 @@
     <meta charset="utf-8"/>
     <title>{{title}}</title>
 
-    <link rel="stylesheet" type="text/css" href="/style/app.css"/>
+    <link rel="stylesheet" type="text/less" href="/style/main.less"/>
+    <script>
+        // prevent LESS from caching
+        var less = {
+            env: 'development'
+        };
 
+    </script>
+    <script src="/script/less.min.js"></script>
+    <script src="/script/jquery.js"></script>
+    
 </head>
 <body>
 
