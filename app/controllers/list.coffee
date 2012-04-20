@@ -12,7 +12,7 @@ randomRealThing = ->
 randomThing = ->
     randomArrayValue ['Thing', 'Cat', 'Kitten', 'Web 2.0', 'Pivot', 'Startup']
 randomAction = ->
-    randomArrayValue ['Doerer', 'Fixer', 'Awesome-Marker', 'Exploder', 'Pivoter', 'Builder 2.5', 'Generator']
+    randomArrayValue ['Doerer', 'Fixer', 'Awesome-Maker', 'Exploder', 'Pivoter', 'Builder 2.5', 'Generator']
 
 # List controller
 module.exports = (request, response) ->
