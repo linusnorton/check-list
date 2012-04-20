@@ -1,0 +1,14 @@
+{
+	"_id": "mongoId",
+	"user": "githubId",
+	"name": "Checklist for PR#510",
+	"modules": [
+		{
+			"_id": "mongoId",
+			"_module": "moduleMongoId",
+			"items": {
+				"mongoId": true
+			}
+ 		}
+	]
+}
