@@ -32,6 +32,9 @@ module.exports = ->
 
     # Enable cookies
     @use express.cookieParser()
+
+    # Enable Sessions
+    @use express.session({ secret: "Nyan Cat" })
     
     # Mount application routes
     @use @router
