@@ -73,10 +73,15 @@ a.signout {
         }
     }
 }
-.list-options, .saved-lists {
+.list-options {
     margin-bottom:20px;
     background-color:#ded9d3;
     .shadow(1,1,2px,1,rgba(0, 0, 0, 1));
+    display:none;
+    
+    &.active {
+        display:block;
+    }
 
     li {
         margin:0 5px;
