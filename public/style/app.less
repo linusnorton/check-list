@@ -60,6 +60,7 @@ a.signout {
     margin-bottom:30px;
     padding-bottom:30px;
     border-bottom:dashed 1px #d3d2d1;
+ .clearfix;
 
     label {
         display:block;
@@ -223,6 +224,7 @@ a.login .icon {
         
         a {
             text-decoration:none;
+            display:block;
         }
         
         &.create-new {
@@ -246,3 +248,20 @@ a.login .icon {
     }
 }
 
+.github-details {
+     border:dashed 1px #D3D2D1;
+     width:360px;
+     float:right;
+     .rounded-corners(10px);
+     padding:15px;
+
+     .thumbnail {
+        border:solid 2px #D3D2D1;
+        .rounded-corners(10px);
+        float:left;
+        margin-right:10px;
+    }
+    table {
+        width:100%;
+    }
+}
