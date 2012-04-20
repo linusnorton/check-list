@@ -9,3 +9,8 @@ module.exports =
         response.render 'home',
             title: 'Welcome!'
             thing: 'World'
+
+    # List page
+    list: (request, response) ->
+        response.render 'list',
+            title: 'List'
