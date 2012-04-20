@@ -55,6 +55,15 @@ module.exports = (request, response) ->
             # redirect home, the API authenticates itself on page load
             response.redirect '/'
 
+    # Step 2: signout
+    else if authStep == 'signout'
+        console.log 'Signout'
+
+        # Trash the session
+        delete request.session.githubAccessToken
+        delete request.session.user
+        response.redirect '/'
+
     # Invalid step - go home
     else
         response.redirect '/'
