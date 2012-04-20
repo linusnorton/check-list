@@ -6,14 +6,23 @@
 
 .button-base-style () {
     .type-size(13px);
-    color: @color-type-white;
+    color: #ffffff;
     .inline-block;
-    padding: 3px 15px;
-    margin: 0 0 (@type-line-height-body / 2) 0;
-    .text-shadow(-0.5px, -1px, 0, rgba(0, 0, 0, 0.3));
+    padding: 5px 15px;
+    margin: 0;    
     .transition(all, .3s);
     .inset-shadow(0, 0, 1px, 0, rgba(255, 255, 255, 0.7));
-    .rounded-corners(3px);
+    .rounded-corners(5px);
     border-width: 1px;
     border-style: solid;
+    .vertical-gradient(#2babbe, #2392a2, #2babbe);
+    border-color: #1c7885;
+    text-decoration:none;
+    
+    &:hover, &:focus {
+        .vertical-gradient(#dfa01a, #c88f17, #dfa01a);
+        cursor: pointer;
+        color:#fff;
+        border-color: #93690f;
+    }
 }

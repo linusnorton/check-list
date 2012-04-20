@@ -1,17 +1,16 @@
 
 {{^user}}
-    
-    <div class="login">
-        <h1>Checklists login</h1>
-        <a class="button login" href="/auth">Login via github</a>
+    <h1>Checklists login</h1>
+    <div class="login">        
+        <a class="button login" href="/auth">Login via github <span class="icon">githuub login</span></a>
     </div>
 
 {{/user}}
 
 {{#user}}
-    
-    <div class="logged-in">
-         <h1>Your checklists</h1>
+    <a class="menu signout" title="Sign me out" href="/auth/signout">Sign me out</a>
+    <h1>Your checklists</h1>
+    <div class="logged-in">                 
         <a href="list">Create new list</a>
 
         <ul class="saved-lists">

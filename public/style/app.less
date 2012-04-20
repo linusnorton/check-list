@@ -24,11 +24,12 @@ h1, .h1 {
 a {
     color:#2babbe;
 }
-.button {
-    
-}
 a:hover {
     color:#dfa01a;
+}
+.button {
+    .button-base-style();
+    .transition(all, 0.3s, ease, 0s);
 }
 a.menu {
     width:32px;
@@ -40,10 +41,10 @@ a.menu {
     margin-left:20px;
 }
 a.home {
-    background:url(/image/home.png) no-repeat left top;    
+    background:transparent url(/image/home.png) no-repeat left top;    
 }
 a.signout {
-    background:url(/image/signout.png) no-repeat left top;    
+    background:transparent url(/image/signout.png) no-repeat left top;    
 }
 .main {
     max-width:1080px;
@@ -158,3 +159,21 @@ a.signout {
         }
     }
 }
+
+a.login {
+    .type-size(24px);
+    padding: 10px 70px 10px 15px;
+    .inline-block;
+    position:relative;    
+    
+    .icon {
+        width:30px;
+        height:30px;
+        text-indent: -9999px;
+        display:block;
+        position:absolute;
+        right:10px;
+        top:8px;
+        background:transparent url(/image/octocat.png) no-repeat left top;
+    }
+} 
