@@ -1,27 +1,22 @@
 <a href="/">Take me home</a>
 
-<h1>This is a list, check it innit</h1>
+<h1>CHECKLIST</h1>
 
-<form name="checklist" id="checklist-form" method="post">
-    <fieldset class="project-name">
-        <label for="project-name">Project or task name</label>
-        <input id="project-name" name="project-name" type="text" placeholder="Project or task name" />
-    </fieldset>
-    
-    <fieldset class="checklist-list">
-        <h3 class="module-title">CSS</h3>
-        <ul class="list-options">
-            <li>Does the CSS validates?</li>
-        </ul>
-        <h3 class="module-title">PHP</h3>
-        <ul class="list-options">
-            <li>Does the feature work without teh javascripts</li>
-            <li>Has you done teh lintings</li>
-        </ul>
-        <h3 class="momodule-titledule">JS</h3>
-        <ul class="list-options">
-            <li>Does the feature work without teh javascripts</li>
-            <li>Has you done teh lintings</li>
-        </ul>
-    </fieldset>
-</form>
+
+<label for="project-name">Project or task name</label>
+<input id="project-name" name="project-name" type="text" placeholder="Project or task name" />
+
+<h3 class="module-title">CSS<span class="module-state">OFF</span></h3>
+<ul class="list-options">
+    <li>Does the CSS validates?<span class="checkbox">Not checked</span><div>Extra info http://www.validatethis.com</div><div class="item-state disabled">N/A</div></li>
+</ul>
+<h3 class="module-title">PHP<span class="module-state on">ON</span></h3>
+<ul class="list-options">
+    <li>Does the feature work without teh javascripts<span class="checkbox">Not checked</span><div class="item-state disabled">N/A</div></li>
+    <li>Has you done teh lintings<span class="checkbox checked">Checked</span><div>Extra info http://www.validatethis.com</div><div class="item-state disabled">N/A</div></li>
+</ul>
+<h3 class="momodule-titledule">JS<span class="module-state on">ON</span></h3>
+<ul class="list-options">
+    <li>Does the feature work without teh javascripts<span class="checkbox checked">Checked</span><div class="item-state disabled">N/A</div></li>
+    <li>Has you done teh lintings<span class="checkbox">Not checked</span><div class="item-state disabled">N/A</div></li>
+</ul>
