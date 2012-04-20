@@ -8,5 +8,6 @@ $ ->
 		switcher: ".switcher"
 		checker: ".checkbox"
 		activeClass: "active"
+		checkedClass: "checked"
 		ws: ws
 	}
