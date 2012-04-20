@@ -30,14 +30,20 @@ a {
 a:hover {
     color:#dfa01a;
 }
-a.home {
-    background:url(/image/home.png) no-repeat left top;
+a.menu {
     width:32px;
     height:32px;
     display:block;
     float:right;
     text-indent: -9999px;
     margin-top:5px;
+    margin-left:20px;
+}
+a.home {
+    background:url(/image/home.png) no-repeat left top;    
+}
+a.signout {
+    background:url(/image/signout.png) no-repeat left top;    
 }
 .main {
     max-width:1080px;
@@ -45,7 +51,7 @@ a.home {
 }
 
 .project-details {
-    margin-bottom:50px;
+    margin-bottom:30px;
     padding-bottom:30px;
     border-bottom:dashed 1px #d3d2d1;
 
@@ -67,10 +73,15 @@ a.home {
         }
     }
 }
-.list-options, .saved-lists {
+.list-options {
     margin-bottom:20px;
     background-color:#ded9d3;
     .shadow(1,1,2px,1,rgba(0, 0, 0, 1));
+    display:none;
+    
+    &.active {
+        display:block;
+    }
 
     li {
         margin:0 5px;
@@ -121,6 +132,7 @@ a.home {
     color:#fff;
     padding:10px;
     .clearfix;
+    margin-top:20px;
     
     h3 {
         width:90%;
