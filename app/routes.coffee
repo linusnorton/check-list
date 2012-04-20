@@ -2,7 +2,14 @@
 # Routes
 module.exports = ->
 
+    # Load middleware
+    authMiddleware = require('./middleware/auth')
+
     # 'Static page' routes
-    @get '/', require('./controllers/static').home
-    @get '/list', require('./controllers/list').index
-    @get '/list/put', require('./controllers/list').put
+    @get '/', authMiddleware, require('./controllers/static').home
+    @get '/list', authMiddleware, require('./controllers/list').index
+    @get '/list/put', authMiddleware, require('./controllers/list').put
+
+    # Auth routes
+    @all '/auth', require('./controllers/auth')
+    @all '/auth/:step', require('./controllers/auth')

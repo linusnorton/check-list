@@ -8,5 +8,4 @@ module.exports =
     home: (request, response) ->
         response.render 'home',
             title: 'Welcome!'
-            thing: 'World'
-
+            user: request.session.user

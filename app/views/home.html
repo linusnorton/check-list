@@ -1,27 +1,33 @@
 
+{{^user}}
+    
+    <div class="login">
+        <h1>Checklists login</h1>
+        <a class="button login" href="/auth">Login via github</a>
+    </div>
 
-<div class="login">
-    <h1>Checklists login</h1>
-    <span class="button login">Login via github</button>
-</div>
+{{/user}}
 
+{{#user}}
+    
+    <div class="logged-in">
+         <h1>Your checklists</h1>
+        <a href="list">Create new list</a>
 
-<div class="logged-in">
-    <h1>Your checklists</h1>
-    <a href="list">Create new list</a>
+        <ul class="saved-lists">
+            <li>
+                <a href="list">List 1</a>
+            </li>
+            <li>
+                <a href="list">List 2</a>
+            </li>
+            <li>
+                <a href="list">List 3</a>
+            </li>
+            <li>
+                <a href="list">List 4</a>
+            </li>
+        </ul>
+    </div>
 
-    <ul class="saved-lists">
-        <li>
-            <a href="list">List 1</a>
-        </li>
-        <li>
-            <a href="list">List 2</a>
-        </li>
-        <li>
-            <a href="list">List 3</a>
-        </li>
-        <li>
-            <a href="list">List 4</a>
-        </li>
-    </ul>
-</div>
+{{/user}}
