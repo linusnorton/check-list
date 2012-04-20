@@ -1,14 +1,11 @@
 class Accordion
 	constructor: (@settings) ->
-		@bindElements()
+		@bindModules module for module in $(@settings.elements)
 
-	bindElements: () ->
-		@bindClickEvents element for element in $(@settings.elements)
-
-	bindClickEvents: (element) ->
-		$(element).find(@settings.switcher)
+	bindModules: (module) ->
+		$(module).find(@settings.switcher)
 		.bind 'click', (event) =>
-			@moduleClicked event
+			@moduleClicked event		
 
 	moduleClicked: (event) ->
 		console.log $(event.target).data().state

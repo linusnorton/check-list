@@ -1,4 +1,8 @@
 List = require "../models/List"
+ListModule = require "../models/ListModule"
+ListItems = require "../models/ListItems"
+Item = require "../models/Item"
+Module = require "../models/Module"
 
 # List controller
 module.exports =
@@ -17,8 +21,20 @@ module.exports =
     #
     # Stores a list in the mongo document store
     put: (request, response) ->
+        item = new Item
+        item.name = "Check yo' self fool"
+        item.description = "Grap hold of croch and check equipment status"
+
+        module = new Module
+        module.name = "Self Checking List"
+        module.items.push item
+
+        module.save()
+
         list = new List
         list.name = "Yo mumma"
+        list.modules.push 
+
         list.save (err) ->
             if err?
                 response.send { success: false }
