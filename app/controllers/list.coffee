@@ -1,10 +1,19 @@
 
+List = require "../models/List"
+
 # List controller
 module.exports = (request, response) ->
 
-    # No ID, redirect home
+    # No ID, create a new list
     if !request.params.id
-        response.redirect '/'
+        
+        list = new List
+            user: request.session.user.id
+            name: 'New List'
+
+        list.save (error) ->
+            throw error if error
+            response.redirect '/list/' + list._id
 
     # Render the list
     else
