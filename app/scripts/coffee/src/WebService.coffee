@@ -5,7 +5,7 @@ class WebService
 		$.ajax data
 
 	
-	updateModule: (listId, moduleId, state) ->
+	updateModule: (listId, moduleId, state, successCallback) ->
 		@sendRequest {
 			url: '/module'
 			data: {
@@ -14,4 +14,6 @@ class WebService
 				state: state
 			}
 			type: 'POST'
+			success: successCallback
+			
 		}

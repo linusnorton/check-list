@@ -80,7 +80,7 @@
       return $.ajax(data);
     };
 
-    WebService.prototype.updateModule = function(listId, moduleId, state) {
+    WebService.prototype.updateModule = function(listId, moduleId, state, successCallback) {
       return this.sendRequest({
         url: '/module',
         data: {
@@ -88,7 +88,8 @@
           moduleId: moduleId,
           state: state
         },
-        type: 'POST'
+        type: 'POST',
+        success: successCallback
       });
     };
 

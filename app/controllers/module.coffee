@@ -16,7 +16,7 @@ class TestController
     #
     update: =>
         listId = @request.param 'listId'
-        itemId = @request.param 'itemId'
+        moduleId = @request.param 'moduleId'
         status = @request.param 'status', true
 
         @response.send

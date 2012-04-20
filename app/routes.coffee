@@ -13,6 +13,7 @@ module.exports = ->
 
     # Updates
     @all '/item', authMiddleware, requireAuthMiddleware, require('./controllers/item').update
+    @all '/module', authMiddleware, requireAuthMiddleware, require('./controllers/module').update
 
     # Auth routes
     @all '/auth', require('./controllers/auth')
