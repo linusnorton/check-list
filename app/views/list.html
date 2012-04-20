@@ -5,10 +5,37 @@
 
 <div class="project-details">
     <label for="project-name">Project or task name</label>
-    <input id="project-name" name="project-name" type="text" placeholder="Project or task name" />
-    <input name="list-id" type="hidden" value="1" />
+    <input id="project-name" name="project-name" type="text" placeholder="Project or task name" value="{{list.name}}"/>
+    <input name="list-id" type="hidden" value="{{list._id}}" />
 </div>
 
+{{#modules}}
+    <div class="module-title module">
+        <h3>{{name}}</h3>
+        {{#active}}
+            <span class="module-state switcher" data-state="on" data-module-id="{{_id}}">ON</span>
+        {{/active}}
+        {{^active}}
+            <span class="module-state switcher" data-state="off" data-module-id="{{_id}}">OFF</span>
+        {{/active}}
+    </div>
+    <ul class="list-options">
+        {{#items}}
+            <li>
+                <h4>{{title}}</h4>
+                {{#status}}
+                    <span class="checkbox checked"></span>
+                {{/status}}
+                {{^status}}
+                    <span class="checkbox"></span>
+                {{/status}}
+                <div class="extra-info">{{description}}</div>
+            </li>
+        {{/items}}
+    </ul>
+{{/modules}}
+
+<!-- DUMMY DATA
 <div class="module-title module">
     <h3>CSS</h3>
     <span class="module-state switcher" data-state="off" data-module-id="1">OFF</span>
@@ -53,3 +80,4 @@
         <div class="item-state disabled">N/A</div>
     </li>
 </ul>
+-->
