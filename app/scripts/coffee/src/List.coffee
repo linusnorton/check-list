@@ -21,10 +21,10 @@ class List
 
 		if switcher.data('state') is 'on'
 			@hideModule switcher
-			@settings.ws.updateModule(@listId, switcher.data('module-id'), switcher.data('state'))
 		else
 			@showModule switcher
-			@settings.ws.updateModule(@listId, switcher.data('module-id'), switcher.data('state'))
+
+		@settings.ws.updateModule(@listId, switcher.data('module-id'), switcher.data('state'))
 
 	hideModule: (switcher) ->
 		switcher.parent().next(@settings.listContainer).removeClass(@settings.activeClass)
@@ -46,12 +46,22 @@ class List
 		console.log itemId
 
 		if state is true
-			console.log 'checked'
-			@uncheckItem 
+			@uncheckItem checker
 		else if state is false
-			console.log 'unchecked'
-			@checkItem
+			@checkItem checker
 		else
 			console.log 'na'
-			@uncheckItem
+
+		@settings.ws.updateItem(@listId, itemId, checker.data('state'))
+
+	uncheckItem: (checker)->
+		checker.removeClass(@settings.checkedClass)
+		checker.data('state', false)
+		checker.html('Not Checked')
+
+	checkItem: (checker)->
+		checker.addClass(@settings.checkedClass)
+		checker.data('state', true)
+		checker.html('Checked')
+
 
