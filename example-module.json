@@ -1,0 +1,11 @@
+{
+	"_id": "mongoId"
+	"name": "PHP",
+	"items": [
+		{
+			"_id": "mongoId",
+			"title": "Unit test",
+			"Description": "Run phing build-test phpunit"
+		}
+	]
+}
