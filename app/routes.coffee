@@ -11,6 +11,9 @@ module.exports = ->
     @get '/list', authMiddleware, requireAuthMiddleware, require('./controllers/list')
     @get '/list/:id', authMiddleware, requireAuthMiddleware, require('./controllers/list')
 
+    # Updates
+    @all '/item', authMiddleware, requireAuthMiddleware, require('./controllers/item').update
+
     # Auth routes
     @all '/auth', require('./controllers/auth')
     @all '/auth/:step', require('./controllers/auth')
