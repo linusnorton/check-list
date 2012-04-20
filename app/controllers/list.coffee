@@ -2,6 +2,18 @@
 List = require "../models/List"
 Module = require "../models/Module"
 
+# Generate a random list name – shouldn't be here, I know. So sue me ;)
+randomListName = ->
+    randomRealThing() + ' ' + randomThing() + ' ' + randomAction()
+randomArrayValue = (array) ->
+    array[Math.floor Math.random() * array.length]
+randomRealThing = ->
+    randomArrayValue ['Review for', 'Build of']
+randomThing = ->
+    randomArrayValue ['Thing', 'Cat', 'Kitten', 'Web 2.0', 'Pivot', 'Startup']
+randomAction = ->
+    randomArrayValue ['Doerer', 'Fixer', 'Awesome-Marker', 'Exploder', 'Pivoter', 'Builder 2.5', 'Generator']
+
 # List controller
 module.exports = (request, response) ->
 
@@ -15,7 +27,7 @@ module.exports = (request, response) ->
             # Create a new list
             list = new List
                 user: request.session.user.id
-                name: 'New List'
+                name: randomListName()
                 modules: {}
 
             for module in modules
