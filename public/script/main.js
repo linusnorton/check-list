@@ -12,6 +12,7 @@
       switcher: ".switcher",
       checker: ".checkbox",
       activeClass: "active",
+      checkedClass: "checked",
       ws: ws
     });
   });
@@ -32,6 +33,19 @@
         data: {
           listId: listId,
           moduleId: moduleId,
+          state: state
+        },
+        type: 'POST',
+        success: successCallback
+      });
+    };
+
+    WebService.prototype.updateItem = function(listId, itemId, state, successCallback) {
+      return this.sendRequest({
+        url: '/item',
+        data: {
+          listId: listId,
+          itemId: itemId,
           state: state
         },
         type: 'POST',
@@ -86,11 +100,10 @@
       switcher = $(event.target);
       if (switcher.data('state') === 'on') {
         this.hideModule(switcher);
-        return this.settings.ws.updateModule(this.listId, switcher.data('module-id'), switcher.data('state'));
       } else {
         this.showModule(switcher);
-        return this.settings.ws.updateModule(this.listId, switcher.data('module-id'), switcher.data('state'));
       }
+      return this.settings.ws.updateModule(this.listId, switcher.data('module-id'), switcher.data('state'));
     };
 
     List.prototype.hideModule = function(switcher) {
@@ -115,15 +128,25 @@
       state = checker.data('state');
       console.log(itemId);
       if (state === true) {
-        console.log('checked');
-        return this.uncheckItem;
+        this.uncheckItem(checker);
       } else if (state === false) {
-        console.log('unchecked');
-        return this.checkItem;
+        this.checkItem(checker);
       } else {
         console.log('na');
-        return this.uncheckItem;
       }
+      return this.settings.ws.updateItem(this.listId, itemId, checker.data('state'));
+    };
+
+    List.prototype.uncheckItem = function(checker) {
+      checker.removeClass(this.settings.checkedClass);
+      checker.data('state', false);
+      return checker.html('Not Checked');
+    };
+
+    List.prototype.checkItem = function(checker) {
+      checker.addClass(this.settings.checkedClass);
+      checker.data('state', true);
+      return checker.html('Checked');
     };
 
     return List;

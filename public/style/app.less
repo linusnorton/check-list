@@ -17,7 +17,7 @@ h1, .h1 {
     .type-size(40px);
     font-family:ChunkFiveRoman;
     color:#484848;
-    margin-bottom:40px;
+    margin-bottom:46px;
     border-bottom:dashed 1px #d3d2d1;
     font-weight:normal;
 }
@@ -211,6 +211,7 @@ a.login .icon {
     margin-bottom:20px;
     background-color:#ded9d3;
     .shadow(1,1,2px,1,rgba(0, 0, 0, 1));
+    .rounded-corners(10px);
 
     li {
         margin:0 5px;
@@ -229,14 +230,16 @@ a.login .icon {
             a {
                 color:#7fb966;
                 font-weight:bold;
+                .type-size(18px);
                 background:transparent url(/image/create-new.png) no-repeat left top;
                 display:inline-block;
                 padding-left:25px;
-                height:17px;
-                padding-top:3px;
+                height:18px;
+                padding-top:2px;
 
                 &:hover {
                     color:#dfa01a;
+                    background-position:left -20px;
                 }
             }
         }
