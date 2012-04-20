@@ -5,10 +5,11 @@
 
 <label for="project-name">Project or task name</label>
 <input id="project-name" name="project-name" type="text" placeholder="Project or task name" />
+<input name="list-id" type="hidden" value="1" />
 
-<div class="module-title">
+<div class="module-title module">
     <h3>CSS</h3>
-    <span class="module-state">OFF</span>
+    <span class="module-state switcher" data-state="off" data-module-id="1">OFF</span>
 </div>
 <ul class="list-options">
     <li class="not-applicable">
@@ -19,9 +20,9 @@
     </li>
 </ul>
 
-<div class="module-title">
+<div class="module-title module">
     <h3>PHP</h3>
-    <span class="module-state on">ON</span>
+    <span class="module-state switcher on" data-state="on" data-module-id="2">ON</span>
 </div>
 <ul class="list-options">
     <li>
@@ -37,7 +38,7 @@
     </li>
 </ul>
 
-<div class="module-title"><h3>JS</h3><span class="module-state on">ON</span></div>
+<div class="module-title module"><h3>JS</h3><span class="module-state switcher on" data-state="on" data-module-id="3">ON</span></div>
 <ul class="list-options">
     <li>
         <h4>Does the feature work without teh javascripts</h4>

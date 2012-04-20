@@ -29,6 +29,11 @@ directory of the application, run `npm install -d`.
 
 Now you can run your application with `coffee app.coffee`.
 
+## Development ##
+
+If you need to make changes to the front end javascript please run
+`coffee -o public/script/ --join main.js -cw app/scripts/`
+to compile the main.js file
 
 ## Further Documentation ##
 
