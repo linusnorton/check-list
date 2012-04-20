@@ -6,6 +6,7 @@
     var accordion;
     return accordion = new Accordion({
       listIdentifier: "input[name='list-id']",
+      listContainer: ".list-options",
       elements: "div.module",
       switcher: ".switcher"
     });
@@ -16,24 +17,18 @@
     Accordion.name = 'Accordion';
 
     function Accordion(settings) {
+      var module, _i, _len, _ref;
       this.settings = settings;
-      this.bindElements();
+      _ref = $(this.settings.elements);
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        module = _ref[_i];
+        this.bindModules(module);
+      }
     }
 
-    Accordion.prototype.bindElements = function() {
-      var element, _i, _len, _ref, _results;
-      _ref = $(this.settings.elements);
-      _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        element = _ref[_i];
-        _results.push(this.bindClickEvents(element));
-      }
-      return _results;
-    };
-
-    Accordion.prototype.bindClickEvents = function(element) {
+    Accordion.prototype.bindModules = function(module) {
       var _this = this;
-      return $(element).find(this.settings.switcher).bind('click', function(event) {
+      return $(module).find(this.settings.switcher).bind('click', function(event) {
         return _this.moduleClicked(event);
       });
     };
