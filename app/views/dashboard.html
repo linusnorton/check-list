@@ -1,20 +1,15 @@
 
 <div class="logged-in">
      <h1>Your checklists</h1>
-    <a href="list">Create new list</a>
+    <a href="/list">Create new list</a>
 
     <ul class="saved-lists">
-        <li>
-            <a href="list">List 1</a>
-        </li>
-        <li>
-            <a href="list">List 2</a>
-        </li>
-        <li>
-            <a href="list">List 3</a>
-        </li>
-        <li>
-            <a href="list">List 4</a>
-        </li>
+        {{#lists}}
+            <li>
+                <a href="/list/{{_id}}">
+                    {{name}}
+                </a>
+            </li>
+        {{/lists}}
     </ul>
 </div>
