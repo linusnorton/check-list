@@ -8,7 +8,7 @@ module.exports = (request, response) ->
     if request.session.user
 
         # Get lists
-        List.find({user: request.session.user.id}).desc('date.created').run (error, lists) ->
+        List.find({user: request.session.user.id}).sort('date.created').exec (error, lists) ->
             throw error if error
 
             # Render view

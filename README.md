@@ -1,15 +1,13 @@
 
-# Express Coffee Template #
+# check-list  #
 
-An Express + CoffeeScript + Mustache application template for
-Node (aka hipstermatic). This provides a simple basis for an
-application, and helps me skip over the tedious part of
-configuring Express the way I like it.
-
+An Express + CoffeeScript + Mustache application for creating
+check-lists. Useful for creating QA checklists for manual
+processes.
 
 ## Requirements ##
 
-In order to use this template, you'll need the following:
+In order to use check-list, you'll need the following:
 
  * Node JS – [Node installation instructions][node]
  * Node Package Manager – [npm installation instructions][npm]
@@ -19,13 +17,7 @@ In order to use this template, you'll need the following:
 
 ## Usage ##
 
-It's best not to clone this repo, as you'll end up with all of
-the template history in your project. Instead, I recommend that
-you [download a compressed copy here][dl].
-
-Once you've extracted the template, you have to install all of
-your application's dependencies. From within the top-level
-directory of the application, run `npm install -d`.
+run `npm install -d`.
 
 Now you can run your application with `coffee app.coffee`.
 
